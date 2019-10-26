@@ -5,8 +5,8 @@ import Column from './Column'
 const Row = (props) => {
     const { columns } = props;
     return <LayoutRow>
-        {columns.map((column, i) =>
-            <Column {...column} key={i} />
+        {columns.map((column, index) =>
+            <Column {...column} key={index} />
         )}
             </LayoutRow>
 };

@@ -4,8 +4,8 @@ import Container from './Container';
 
 const Column = props => {
     return <LayoutCol sm={props.width}>
-                {props.containers.map(container => (
-                    <Container {...container} />
+                {props.containers.map((container, i) => (
+                    <Container {...container} key={i}/>
                     ))}
             </LayoutCol>
 };

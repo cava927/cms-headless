@@ -1,5 +1,6 @@
 function getFullContainers(column, containers) {
     return column.containers.map(container => {
+        debugger;
         const fullContainer = containers[container.identifier];
         return {
             ...fullContainer.container,
@@ -9,6 +10,7 @@ function getFullContainers(column, containers) {
 };
 export function getUpdatedColumns(columns, containers) {
     return columns.map(column => {
+        debugger
         return {
             ...column,
             containers: getFullContainers(column, containers)

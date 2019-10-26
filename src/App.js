@@ -13,7 +13,10 @@ class App extends Component{
         Authorization: 'Basic ' + btoa('admin@dotcms.com:admin')
       }
     })
-    .then(data => data.json())
+    .then(data =>
+          //console.log(data.json())
+          data.json()
+    )
     .then(page => this.setState(page.entity));
   }
 

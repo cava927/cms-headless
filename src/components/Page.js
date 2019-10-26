@@ -9,7 +9,7 @@ const Page = props => {
             <LayoutContainer>
                 {layout ? layout.body.rows.map((row, index) => {
                 const columns = getUpdatedColumns(row.columns, containers);
-                return <Row key={row.identifier} columns={columns} />;
+                return <Row key={index} columns={columns} />;
             })
                 : null}
             </LayoutContainer>
