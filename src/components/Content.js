@@ -1,23 +1,23 @@
-import React from 'react';
-import GeneralContent from "./GeneralContent";
-import GeneralEvent from "./GeneralEvent";
-import GeneralComponent from "./GeneralComponent";
-
-function getComponent(type) {
-    switch (type){
-        case 'webPageContent':
-             return GeneralContent;
-        case 'SimpleWidget':
-            return GeneralComponent;
-        case 'calendarEvent':
-            return GeneralEvent;
-        default:
-            return GeneralContent
-    }
-}
+import React from 'react'
+import {Text} from "./typeContent"
+import {Media} from "./typeContent"
+import {Card} from "./typeContent"
 
 const Content = (props) => {
-    const Component = getComponent(props.contentType);
-    return <Component {...props}/>
+    let {content} = props;
+    console.log(content);
+    return (
+        <>
+        {!!content && content.type==='text'  ? 
+            <Text content= {content}/>  : null
+        }
+        {!!content && content.type==='media'  ? 
+            <Media content= {content}/>  : null
+        }
+        {!!content && content.type==='card'  ? 
+            <Card content= {content}/>  : null
+        }
+        </>
+    )
 };
 export default Content;
